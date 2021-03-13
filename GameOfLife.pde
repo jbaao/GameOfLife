@@ -7,7 +7,7 @@ private boolean running = true; //used to start and stop program
 
 public void setup () {
   size(400, 400);
-  frameRate(6);
+  frameRate(8);
   Interactive.make( this );
 
   buttons = new Life[NUM_ROWS][NUM_COLS];
@@ -47,11 +47,17 @@ public void draw () {
 
   copyFromBufferToButtons();
 }
-
 public void keyPressed() {
- // your code here
+  if(key == ' '){
+    running =! running;
+  }
+  if(key == '1'){
+    frameRate(3);
+  }
+  if(key == '2'){
+    frameRate(8);
+  }
 }
-
 public void copyFromBufferToButtons() {
   for (int a = 0; a < 20; a++) {
     for (int b = 0; b < 20; b++) {
